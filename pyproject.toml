@@ -3,11 +3,27 @@ requires = ["maturin>=1.10,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "test-py"
-requires-python = ">=3.8"
+name = "test-keishis"
+version = "0.2.2"
+requires-python = ">=3.13"
+description = "A test package for KeishiS"
+readme = "README.md"
+keywords = ["rust", "python", "example"]
+authors = [
+  {name = "Keishi Sando", email = "sando.keishi.sp@alumni.tsukuba.ac.jp"},
+  {name = "KeishiS", email = "sando.keishi@ism.ac.jp"}
+]
+maintainers = [
+  {name = "Keishi Sando", email = "sando.keishi.sp@alumni.tsukuba.ac.jp"}
+]
 classifiers = [
     "Programming Language :: Rust",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dynamic = ["version"]
+
+[project.urls]
+repository = "github.com/KeishiS/test-keishis"
+
+[tool.maturin]
+python-source = "python"
+module-name = "test_keishis._test_keishis"
+bindings = "pyo3"

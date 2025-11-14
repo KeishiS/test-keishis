@@ -1,11 +1,11 @@
 [package]
-name = "test-py"
-version = "0.1.0"
+name = "test-keishis"
+version = "0.2.0"
 edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
-name = "test_py"
+name = "test_keishis"
 crate-type = ["cdylib"]
 
 [dependencies]

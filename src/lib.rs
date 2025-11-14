@@ -2,7 +2,8 @@ use pyo3::prelude::*;
 
 /// A Python module implemented in Rust.
 #[pymodule]
-mod test_py {
+#[pyo3(name = "_test_keishis")]
+mod test_keishis {
     use pyo3::prelude::*;
 
     /// Formats the sum of two numbers as string.
