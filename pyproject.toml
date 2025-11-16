@@ -20,8 +20,8 @@ classifiers = [
     "Programming Language :: Rust",
 ]
 
-[project.urls]
-repository = "github.com/KeishiS/test-keishis"
+# [project.urls]
+# homepage = "github.com/KeishiS/test-keishis"
 
 [tool.maturin]
 python-source = "python"
