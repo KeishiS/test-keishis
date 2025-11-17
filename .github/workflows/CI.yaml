@@ -67,7 +67,7 @@ jobs:
               with:
                   repo_token: ${{ secrets.GITHUB_TOKEN }}
                   tag: ${{ github.ref }}
-                  file: target/release/*.so
+                  file: target/release/libtest_keishis.so
                   asset_name: libtest_keishis-linux-${{ matrix.platform.target }}.so
                   draft: true
                   body: "This is an example."
