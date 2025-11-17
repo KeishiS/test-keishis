@@ -44,15 +44,15 @@ jobs:
                   target: ${{ matrix.platform.target }}
                   args: --release --out dist --find-interpreter --no-default-features --features python
                   manylinux: auto
-            - name: Install Rust
-              uses: dtolnay/rust-toolchain@stable
-            - name: Cargo build
-              run: cargo build --target-dir target --release --no-default-features --features julia
             - name: Upload wheels
               uses: actions/upload-artifact@v4
               with:
                   name: wheels-linux-${{ matrix.platform.target }}
                   path: dist
+            - name: Install Rust
+              uses: dtolnay/rust-toolchain@stable
+            - name: Cargo build
+              run: cargo build --release --target-dir target --no-default-features --features julia
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
@@ -89,6 +89,16 @@ jobs:
               with:
                   name: wheels-musllinux-${{ matrix.platform.target }}
                   path: dist
+            - name: Install Rust
+              uses: dtolnay/rust-toolchain@stable
+            - name: Cargo build
+              run: cargo build --release --target-dir target --no-default-features --features julia
+            - run: ls -la target/release/
+            - name: Upload cargo target
+              uses: actions/upload-artifact@v4
+              with:
+                  name: target-musllinux-${{ matrix.platform.target }}
+                  path: target/release/libtest_keishis.so
 
     windows:
         runs-on: ${{ matrix.platform.runner }}
@@ -116,6 +126,16 @@ jobs:
               with:
                   name: wheels-windows-${{ matrix.platform.target }}
                   path: dist
+            - name: Install Rust
+              uses: dtolnay/rust-toolchain@stable
+            - name: Cargo build
+              run: cargo build --release --target-dir target --no-default-features --features julia
+            - run: ls -la target/release/
+            - name: Upload cargo target
+              uses: actions/upload-artifact@v4
+              with:
+                  name: target-windows-${{ matrix.platform.target }}
+                  path: target/release/libtest_keishis.so
 
     macos:
         runs-on: ${{ matrix.platform.runner }}
@@ -142,6 +162,16 @@ jobs:
               with:
                   name: wheels-macos-${{ matrix.platform.target }}
                   path: dist
+            - name: Install Rust
+              uses: dtolnay/rust-toolchain@stable
+            - name: Cargo build
+              run: cargo build --release --target-dir target --no-default-features --features julia
+            - run: ls -la target/release/
+            - name: Upload cargo target
+              uses: actions/upload-artifact@v4
+              with:
+                  name: target-macos-${{ matrix.platform.target }}
+                  path: target/release/libtest_keishis.so
 
     sdist:
         runs-on: ubuntu-latest
@@ -183,13 +213,13 @@ jobs:
               with:
                   command: upload
                   args: --non-interactive --skip-existing wheels-*/*
-            # - name: Upload binaries to release
-            #   if: ${{ startsWith(github.ref, 'refs/tags/') }}
-            #   uses: svenstaro/upload-release-action@v2
-            #  with:
-            #       repo_token: ${{ secrets.GITHUB_TOKEN }}
-            #       tag: ${{ github.ref }}
-            #       file: target/release/libtest_keishis.so
-            #       asset_name: libtest_keishis-linux-${{ matrix.platform.target }}.so
-            #       draft: true
-            #       body: "This is an example."
+            - name: Upload binaries to release
+              if: ${{ startsWith(github.ref, 'refs/tags/') }}
+              uses: svenstaro/upload-release-action@v2
+              with:
+                  repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  tag: ${{ github.ref }}
+                  file_glob: true
+                  file: target-*
+                  draft: true
+                  body: "This is an example."
