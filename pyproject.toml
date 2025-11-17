@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "test-keishis"
-version = "0.2.4"
+version = "0.2.5"
 requires-python = ">=3.13"
 description = "A test package for KeishiS"
 readme = "README.md"
@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "github.com/KeishiS/test-keishis"
+homepage = "https://github.com/KeishiS/test-keishis"
 
 [tool.maturin]
 python-source = "python"
