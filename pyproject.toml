@@ -9,15 +9,8 @@ requires-python = ">=3.13"
 description = "A test package for KeishiS"
 readme = "README.md"
 keywords = ["rust", "python", "example"]
-authors = [
-  {name = "Keishi Sando", email = "sando.keishi.sp@alumni.tsukuba.ac.jp"},
-  {name = "KeishiS", email = "sando.keishi@ism.ac.jp"}
-]
 maintainers = [
   {name = "Keishi Sando", email = "sando.keishi.sp@alumni.tsukuba.ac.jp"}
-]
-classifiers = [
-    "Programming Language :: Rust",
 ]
 
 [project.urls]
