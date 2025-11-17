@@ -10,6 +10,7 @@ on:
         tags:
             - "*"
     pull_request:
+    workflow_dispatch:
 
 permissions:
     contents: read
@@ -44,11 +45,20 @@ jobs:
                   args: --release --out dist --find-interpreter --no-default-features --features python
                   sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
                   manylinux: auto
+            - name: Install Rust
+              uses: Swatinem/rust-cache@v2
+            - name: Cargo build
+              run: cargo build --target-dir target --release --no-default-features --features julia
             - name: Upload wheels
               uses: actions/upload-artifact@v4
               with:
                   name: wheels-linux-${{ matrix.platform.target }}
                   path: dist
+            - name: Upload cargo target
+              uses: actions/upload-artifact@v4
+              with:
+                  name: target-linux-${{ matrix.platform.target }}
+                  path: target/release/*.so
 
     musllinux:
         runs-on: ${{ matrix.platform.runner }}
