@@ -51,14 +51,13 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo Build
               run: cargo build --release --target ${{ matrix.platform.target }} --target-dir target --no-default-features --features julia
-            - run: ls -la target/${{ matrix.platform.target }}/release target
             - name: Archive Build
-              run: cd target/release && tar -zcvf target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz libtest_keishis.${{ matrix.platform.dlext }}
+              run: cd target/${{ matrix.platform.target }}/release && tar -zcvf target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz libtest_keishis.${{ matrix.platform.dlext }}
             - name: Upload Cargo Target
               uses: actions/upload-artifact@v4
               with:
                   name: target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}
-                  path: target/release/target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz
+                  path: target/${{ matrix.platform.target }}/release/target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz
     windows:
         name: Build for Windows
         strategy:
@@ -81,16 +80,15 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo Build
               run: cargo build --release --target ${{ matrix.platform.target }} --target-dir target --no-default-features --features julia
-            - run: dir target\${{ matrix.platform.target }}\release target
             - name: Rename dll file
-              run: cd target\release && rename test_keishis.${{ matrix.platform.dlext }}  libtest_keishis.${{ matrix.platform.dlext }}
+              run: cd target\${{ matrix.platform.target }}\release && rename test_keishis.${{ matrix.platform.dlext }}  libtest_keishis.${{ matrix.platform.dlext }}
             - name: Archive Build
-              run: cd target\release && tar -zcvf target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz libtest_keishis.${{ matrix.platform.dlext }}
+              run: cd target\${{ matrix.platform.target }}\release && tar -zcvf target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz libtest_keishis.${{ matrix.platform.dlext }}
             - name: Upload Cargo Target
               uses: actions/upload-artifact@v4
               with:
                   name: target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}
-                  path: target/release/target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz
+                  path: target\${{ matrix.platform.target }}\release\target-${{ matrix.platform.os }}-${{ matrix.platform.arch }}.tar.gz
     release:
         name: Release
         runs-on: ubuntu-latest
