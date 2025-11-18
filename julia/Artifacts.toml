@@ -1,53 +1,50 @@
 [[rs-twwl]]
 arch = "x86_64"
-git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+git-tree-sha1 = "a81dc99b45c24c85743cb70ab3977d3447f8fc70"
 libc = "glibc"
 os = "linux"
 
     [[rs-twwl.download]]
-    sha256 = "e774ee1e9be0ef7d806bc529d4689b837c8e0053a50279a94b12d23edfcd66ca"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-x86_64.tar.gz"
+    sha256 = "8f504bad6ef99e8717f538955104970727a3b1084958f093c57b3a40b54d2dd4"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-linux-x86_64.tar.gz"
 [[rs-twwl]]
 arch = "aarch64"
-git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+git-tree-sha1 = "1df5ce8ae221c9a6218dc29e104abe99e3afc27b"
 libc = "glibc"
 os = "linux"
 
     [[rs-twwl.download]]
-    sha256 = "c86e48f055a4221bb07bb4898a42fd16d7819e2411546cf23300a62395784903"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-aarch64.tar.gz"
-[[rs-twwl]]
-arch = "armv7l"
-call_abi = "eabihf"
-git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
-libc = "glibc"
-os = "linux"
-
-    [[rs-twwl.download]]
-    sha256 = "84b0fef0f192d95aed4ea49fc25bddaaa995290f54eb35fa6ee7b3dee4505bd3"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-armv7.tar.gz"
-[[rs-twwl]]
-arch = "i686"
-git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
-libc = "glibc"
-os = "linux"
-
-    [[rs-twwl.download]]
-    sha256 = "84b0fef0f192d95aed4ea49fc25bddaaa995290f54eb35fa6ee7b3dee4505bd3"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-x86.tar.gz"
-[[rs-twwl]]
-arch = "aarch64"
-git-tree-sha1 = "910b7e340f723077ac07a66c30b490138a48879b"
-os = "macos"
-
-    [[rs-twwl.download]]
-    sha256 = "59e12d6f6c5bf8cc244fee5c6a33ca6cc157ca34d89c60efd158f665eb898527"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-macos-aarch64.tar.gz"
+    sha256 = "d6d6482eed5b0ce3ad0ff8b4fe00662259aba586ddc133ba2c96f8d870884d58"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-linux-aarch64.tar.gz"
 [[rs-twwl]]
 arch = "x86_64"
-git-tree-sha1 = "47cd66858740eb2e343757e46da0142193c43b48"
+git-tree-sha1 = "c9c39ccaa4331a487df7d9f9ec6698300f034668"
 os = "macos"
 
     [[rs-twwl.download]]
-    sha256 = "0cc1f34000457e54bdd541d5f2f17faf5fc71aa02528f6c6dc5e637567551896"
-    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-macos-x86_64.tar.gz"
+    sha256 = "c1f3931b0967442a5334e046c0a659f52656a021e6c5aa6b577245450157f811"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-macos-x86_64.tar.gz"
+[[rs-twwl]]
+arch = "aarch64"
+git-tree-sha1 = "35b21f5a2d4ef0c8d33cf3637947a39f50200f47"
+os = "macos"
+
+    [[rs-twwl.download]]
+    sha256 = "35718bc54f41ea0dd97a0271e401951f9182619637aa03591bab3e6198951f85"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-macos-aarch64.tar.gz"
+[[rs-twwl]]
+arch = "x86_64"
+git-tree-sha1 = "f96bbdf29676d48584b01158c0a47af7c50ce40f"
+os = "windows"
+
+    [[rs-twwl.download]]
+    sha256 = "45ac41b1af66540e8c96ffe2d81e221e1b4d3f22b5571c2e372b00465ec8a67e"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-windows-x86_64.tar.gz"
+[[rs-twwl]]
+arch = "aarch64"
+git-tree-sha1 = "f08ab1b39c87ae282fa1ffa91477e73f211e848e"
+os = "windows"
+
+    [[rs-twwl.download]]
+    sha256 = "32dc3e2b140bf75c15c8a2021db018e0d2276dfb6ca9908c82a0c60fcfed659d"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/rust-v0.2.5/target-windows-aarch64.tar.gz"
