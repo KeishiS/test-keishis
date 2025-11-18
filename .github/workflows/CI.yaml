@@ -131,7 +131,8 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: cd target\release && Compress-Archive -Path libtest_keishis.dll -DestinationPath target-windows-${{ matrix.platform.target }}.zip
+            - run: dir target\release
+            - run: cd target\release && Compress-Archive -Path test_keishis.dll -DestinationPath target-windows-${{ matrix.platform.target }}.zip
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:

@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "test-keishis"
-version = "0.2.21"
+version = "0.2.22"
 requires-python = ">=3.13"
 description = "A test package for KeishiS"
 readme = "README.md"
