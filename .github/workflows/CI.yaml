@@ -53,7 +53,7 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: cd target/release && tar-zcvf target-linux-${{ matrix.platform.target }}.tar.gz libtest_keishis.so
+            - run: cd target/release && tar -zcvf target-linux-${{ matrix.platform.target }}.tar.gz libtest_keishis.so
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
@@ -164,7 +164,7 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: cd target/release && tar-zcvf target-macos-${{ matrix.platform.target }}.tar.gz libtest_keishis.dylib
+            - run: cd target/release && tar -zcvf target-macos-${{ matrix.platform.target }}.tar.gz libtest_keishis.dylib
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
