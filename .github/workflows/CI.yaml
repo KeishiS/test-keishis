@@ -57,7 +57,7 @@ jobs:
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
-                  name: target-linux-${{ matrix.platform.target }}.tar.gz
+                  name: target-linux-${{ matrix.platform.target }}
                   path: target/release/target-linux-${{ matrix.platform.target }}.tar.gz
 
     musllinux:
@@ -98,7 +98,7 @@ jobs:
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
-                  name: target-musllinux-${{ matrix.platform.target }}.tar.gz
+                  name: target-musllinux-${{ matrix.platform.target }}
                   path: target/release/target-musllinux-${{ matrix.platform.target }}.tar.gz
 
     windows:
@@ -136,7 +136,7 @@ jobs:
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
-                  name: target-windows-${{ matrix.platform.target }}.zip
+                  name: target-windows-${{ matrix.platform.target }}
                   path: target\release\target-windows-${{ matrix.platform.target }}.zip
 
     macos:
@@ -172,7 +172,7 @@ jobs:
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
-                  name: target-macos-${{ matrix.platform.target }}.tar.gz
+                  name: target-macos-${{ matrix.platform.target }}
                   path: target/release/target-macos-${{ matrix.platform.target }}.tar.gz
 
     sdist:
@@ -222,6 +222,6 @@ jobs:
                   repo_token: ${{ secrets.GITHUB_TOKEN }}
                   tag: ${{ github.ref }}
                   file_glob: true
-                  file: target-*
+                  file: target-*/*
                   draft: true
                   body: "This is an example."
