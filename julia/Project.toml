@@ -3,6 +3,10 @@ uuid = "876e7796-7a53-4549-8adf-78239d5bd4eb"
 authors = ["KeishiS <sando.keishi.sp@alumni.tsukuba.ac.jp> and contributors"]
 version = "0.1.0"
 
+[deps]
+Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+
 [compat]
 julia = "1.6.7"
 

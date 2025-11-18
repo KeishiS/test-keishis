@@ -1,8 +1,8 @@
 module twwl
 
-using Libdl
+using Libdl, Artifacts
 
-const artifact_root = artifact"rs-twwl"
+const artifact_root = @artifact_str"rs-twwl"
 const libtwwl = joinpath(artifact_root, "libtest_keishis." * Libdl.dlext)
 
 function mysum(a::Int, b::Int)::Int
