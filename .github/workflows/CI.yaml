@@ -131,7 +131,7 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: mv target/release/libtest_keishis.dll libtest_keishis-windows-${{ matrix.platform.target }}.dll
+            - run: move target\release\test_keishis.dll libtest_keishis-windows-${{ matrix.platform.target }}.dll
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
