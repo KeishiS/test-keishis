@@ -53,12 +53,11 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: mv target/release/libtest_keishis.so libtest_keishis-linux-${{ matrix.platform.target }}.so
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
                   name: target-linux-${{ matrix.platform.target }}
-                  path: libtest_keishis-linux-${{ matrix.platform.target }}.so
+                  path: target/release/libtest_keishis.so
 
     musllinux:
         runs-on: ${{ matrix.platform.runner }}
@@ -94,12 +93,11 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: mv target/release/libtest_keishis.so libtest_keishis-musllinux-${{ matrix.platform.target }}.so
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
                   name: target-musllinux-${{ matrix.platform.target }}
-                  path: libtest_keishis-musllinux-${{ matrix.platform.target }}.so
+                  path: target/release/libtest_keishis.so
 
     windows:
         runs-on: ${{ matrix.platform.runner }}
@@ -131,12 +129,11 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: move target\release\test_keishis.dll libtest_keishis-windows-${{ matrix.platform.target }}.dll
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
                   name: target-windows-${{ matrix.platform.target }}
-                  path: libtest_keishis-windows-${{ matrix.platform.target }}.dll
+                  path: target\release\test_keishis.dll
 
     macos:
         runs-on: ${{ matrix.platform.runner }}
@@ -167,12 +164,11 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
             - name: Cargo build
               run: cargo build --release --target-dir target --no-default-features --features julia
-            - run: mv target/release/libtest_keishis.dylib libtest_keishis-macos-${{ matrix.platform.target }}.dylib
             - name: Upload cargo target
               uses: actions/upload-artifact@v4
               with:
                   name: target-macos-${{ matrix.platform.target }}
-                  path: libtest_keishis-macos-${{ matrix.platform.target }}.dylib
+                  path: target/release/libtest_keishis.dylib
 
     sdist:
         runs-on: ubuntu-latest
@@ -221,6 +217,6 @@ jobs:
                   repo_token: ${{ secrets.GITHUB_TOKEN }}
                   tag: ${{ github.ref }}
                   file_glob: true
-                  file: target-*/*
+                  file: target-*
                   draft: true
                   body: "This is an example."
