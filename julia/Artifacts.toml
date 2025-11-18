@@ -1,0 +1,53 @@
+[[rs-twwl]]
+arch = "x86_64"
+git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+libc = "glibc"
+os = "linux"
+
+    [[rs-twwl.download]]
+    sha256 = "e774ee1e9be0ef7d806bc529d4689b837c8e0053a50279a94b12d23edfcd66ca"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-x86_64.tar.gz"
+[[rs-twwl]]
+arch = "aarch64"
+git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+libc = "glibc"
+os = "linux"
+
+    [[rs-twwl.download]]
+    sha256 = "c86e48f055a4221bb07bb4898a42fd16d7819e2411546cf23300a62395784903"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-aarch64.tar.gz"
+[[rs-twwl]]
+arch = "armv7l"
+call_abi = "eabihf"
+git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+libc = "glibc"
+os = "linux"
+
+    [[rs-twwl.download]]
+    sha256 = "84b0fef0f192d95aed4ea49fc25bddaaa995290f54eb35fa6ee7b3dee4505bd3"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-armv7.tar.gz"
+[[rs-twwl]]
+arch = "i686"
+git-tree-sha1 = "f931685e8a89ebc8e6af2c221d73a6b4553e7f04"
+libc = "glibc"
+os = "linux"
+
+    [[rs-twwl.download]]
+    sha256 = "84b0fef0f192d95aed4ea49fc25bddaaa995290f54eb35fa6ee7b3dee4505bd3"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-linux-x86.tar.gz"
+[[rs-twwl]]
+arch = "aarch64"
+git-tree-sha1 = "910b7e340f723077ac07a66c30b490138a48879b"
+os = "macos"
+
+    [[rs-twwl.download]]
+    sha256 = "59e12d6f6c5bf8cc244fee5c6a33ca6cc157ca34d89c60efd158f665eb898527"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-macos-aarch64.tar.gz"
+[[rs-twwl]]
+arch = "x86_64"
+git-tree-sha1 = "47cd66858740eb2e343757e46da0142193c43b48"
+os = "macos"
+
+    [[rs-twwl.download]]
+    sha256 = "0cc1f34000457e54bdd541d5f2f17faf5fc71aa02528f6c6dc5e637567551896"
+    url = "https://github.com/KeishiS/test-keishis/releases/download/v0.2.23/target-macos-x86_64.tar.gz"
